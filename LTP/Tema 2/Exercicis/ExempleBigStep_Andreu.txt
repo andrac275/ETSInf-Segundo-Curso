@@ -1,0 +1,21 @@
+P= (x:=4; while x>3 do x:=x-1)		
+Comentari: {} es el estat buit   || es la fletxa cap avall del BigStep
+
+<x:=4; while x>3 do x:=x-1,{}>			|| {x->3}
+	<x:=4,{}>	||	{x->4}		//Asigna el 4 al estat
+		<4,{}>	=> 4
+	<while x>3 do x:=x-1,{x->4}>	
+		< x>3 {x->4} > => true	//Avalua la guarda i Es veritat que 4>3
+			<x,{x->4}>=>4
+			<3,{x->4}>=>3
+		<x:=x-1,{x->4}>	|| {x->3}	//Executar cos, ho diu la transicio. I actualitzar el estat a 3
+			<x-1,{x->4}>=>3	//Asignacio despres de restar
+				<x,{x->4}>=>4
+				<1,{x->4}>=>1
+		<while x>3 do x:=x-1,{x->3}>	|| {x->3} // Executar de nou el while amb el nou estat, que val 3.									
+			< x>3 {x->3} > => false	//Avalua la guarda i Es false  que 3>3 com es mentida, torna el estat x-> al bucle de la linia 15.
+				<x,{x->3}>=>3
+				<3,{x->3}>=>3
+
+La linia 15 torna el estat x=3 perque era un false, eixe false se li torna a la sequencia de la linia 4.
+Per aixo en la line4 hi ha un {x->3} que es l'estat final i el valor de la X.

@@ -1,0 +1,126 @@
+//Exercici
+x:=5;	y:=x;	EstatInicial:{} <- Buit
+
+SMALL STEP
+
+<x:=5;y:=x, {}>	
+	<x:=5,{}> -> <skip,{x|->4}> //Despres d'una asignacio va skip; en la linia següent
+		<5,{}>=>5
+
+<skip; y:=x, {x->4}>
+<y:=x, {x->4}>	
+	<y:=x, {x->4}>	-> <skip,{x->4, y->4}>
+		<x,{x->4}>=>4
+
+<skip;{x->4, y->4}>
+<{x->4, y->4}>
+
+BIG STEP
+<x:=5;y:=x, {}>
+
+
+---------------------------------------
+//Exercici8    dels exercisis del tema 2.
+x=5
+if x>3 then x=x-1 else y=x
+EstatInicial 2
+
+SMALL STEP
+<x:=5; if x>3 then x:=x-1 else y:=x>, {x->2}>
+	<x:=5,{x->2}>	-> <skip,{x->5}>
+		<5,{x->2}>=>5
+
+<skip; if x>3 then x:=x-1 else y:=x>, {x->5}>		
+<if  x>3 then x:=x-1 else y:=x>, {x->5}>
+	<  x>3,{x->5} >  => 5>3=> true
+		<x,{x->5}> =>5 
+		<3,{x->5}> =>3
+	<x:=x-1,{x->5}>
+		<x-1,{x->5}>  => <skip,{x->4}>
+			<x,{x->5}> =>5
+			<-1,{x->5}> =>-1   5-1=4
+
+<skip,{x->4}>
+	EstatFinal {x->4}
+
+BIG STEP
+<x:=5; if x>3 then x:=x-1 else y:=x>, {x->2}>	||	{x->4}
+	<x:=5,{x->2}>	||	{x->5}
+		<5,{x->2}>=>5
+	<if x>3 then x:=x-1 else y:=x, {x->5}>	||	{x->4}
+		<  x>3,{x->5} >	=> true
+			<x,{x->5}> => 5		//5>3 Veritat
+			<3,{x->5}> => 3
+		<x:=x-1,{x->5}>		|| 	{x->4}
+			<x-1,{x->5}>	=> 4
+				<x,{x->5}>	=> 5	//5-1=4
+				<-1,{x->5}> => -1
+
+---------------------------------------
+//Exercici10    dels exercisis del tema 2.
+x:=4
+while x>3 do x:=x-1
+EstatInicial buit
+
+SMALLSTEP
+<x:=4;while x>3 do x:=x-1,{}>
+	<x:=4,{}>	-> <skip, {x->4}>
+		<4,{}> => 4
+<skip;while x>3 do x:=x-1,{x->4}>
+<while x>3 do x:=x-1,{x->4}>
+	< x>3 , {x->4}>	==> true
+		<x,{x->4}> =>4  //4>3: Vertader
+		<3,{x->4}> =>3
+
+<x:=x-1; while x>3 do x:=x-1,{x->4}>
+	<x:=x-1,{x->4}>	===> <skip,{x->3}>
+		<x,{x->4}>	=> 4	//4-1=3
+		<-1,{x->4}>	=>-1
+<skip; while x>3 do x:=x-1,{x->3}>
+<while x>3 do x:=x-1,{x->3}>===> <skip,{x->3}>
+	< x>3 , {x->3}>	==> false
+		<x,{x->3}> =>3  //3>3: Fals
+		<3,{x->3}> =>3
+<skip,{x->3}>
+{x->3} es l'estat final i el valor actual de la X.
+
+BIGSTEP
+<x:=4;while x>3 do x:=x-1,{}>			||	{x->3}	//<- Estat final lini 99
+	<x:=4,{}>	|| {x->4}
+		<4,{}>=>4
+	<while x>3 do x:=x-1,{x->4}>	|| true
+		< x>3, {x->4} > => true
+			<x,{x->4}> => 4	//4>3 Vertader
+			<3,{x->4}> => 3
+
+		<x:=x-1,{x->4}>		||	{x->3}
+			<x, {x->4}>  =>  4	//4-1=3
+			<-1, {x->4}> => -1
+		<while x>3 do x:=x-1,{x->3}>	||	{x->3}	//<- Estat final
+			< x>3, {x->3} > => false
+				<x,{x->3}> => 3	//3>3 Fals
+				<3,{x->3}> => 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
