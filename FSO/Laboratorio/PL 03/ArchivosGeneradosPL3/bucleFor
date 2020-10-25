@@ -1,0 +1,8 @@
+#!/bin/bash
+echo El nombre darguments es: $#
+echo Lordre teclejada es: $0 $@
+echo Llista de arguments:
+for i in $@
+do
+echo $i
+done

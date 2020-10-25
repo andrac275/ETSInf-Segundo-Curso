@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#Comprobar si se possa un proces
+if test $# -lt 1
+then
+    echo "Possa un ID de proces"
+    exit
+fi
+
+#Mostrar la eixida amb la informacio
+if test -d /proc/$1
+then
+    echo -e "PID\tPPID\tESTAT\tCOMANDO"
+    pid=$(awk '/pid/ {print $2}' /proc/$1/status)
+    ppid=$(awk '/PPid/ {print $2}' /proc/$1/status)
+    estat=$(awk '/State/ {print $2}' /proc/$1/status)
+    comando=$(cat /proc/$1/cmdline | tr "\000" " ")
+    echo -e "$pid\t$ppid\t$estat\t$comando"
+fi

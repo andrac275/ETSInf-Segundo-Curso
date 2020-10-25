@@ -1,0 +1,13 @@
+#!/bin/bash
+#Fitxer que borra
+if test -f $1
+    then
+    rm "$1";
+    else
+        if test -d $1
+        then
+        echo "Es un directori"
+        else
+        echo "No existeix el fitxer"
+        fi
+fi

@@ -1,0 +1,7 @@
+#!/bin/bash
+#arguments
+echo El nombre darguments es: $#
+echo Lordre teclejada es: $0
+echo El primer argument: $1
+echo El segon argument: $2
+echo El tercer argument: $3

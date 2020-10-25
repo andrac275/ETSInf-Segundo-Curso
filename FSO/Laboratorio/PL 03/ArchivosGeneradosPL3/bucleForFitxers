@@ -1,0 +1,6 @@
+#!/bin/bash
+for k in *
+do
+cp $k $k.bak
+echo Creada copia de $k
+done

@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#-A mostra tota la llista de processos. awk treu nomes la primera columna, es a dir, el nombre del proces.
+llistatProcessos=$(ps -A | awk '{print $1}')
+
+#Possar capçalera del programa
+echo -e "PID\tPPID\tESTAT\tCOMANDO"
+
+#Recorrer bucle amb cada nombre de procés.
+for i in $llistatProcessos
+do
+    ./inf_process $i | grep -v PID  #Lordre grep -v lleva les linies que possa "PID" ja que com invoca inf_process i fa un echo de una capçalera... el faria una vegada per iteracio.
+done

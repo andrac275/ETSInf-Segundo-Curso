@@ -1,0 +1,8 @@
+# !/bin/bash
+process=$(ps | grep yes | wc -l)
+if test $process -eq 0
+    then
+    echo "No proces"
+    else
+    echo "$process numero de yes"
+    fi
