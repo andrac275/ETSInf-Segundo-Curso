@@ -77,6 +77,7 @@ public class FiguresGroup implements Printable {
         return l; 
     }
     
+    //Exercici 8
     public void print(char c) {
         for (int i = 0; i < numF; i++) {
             if(figuresList[i] instanceof Printable){
