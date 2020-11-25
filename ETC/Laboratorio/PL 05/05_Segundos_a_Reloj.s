@@ -12,7 +12,7 @@ cad_segundos:   .asciiz " Segundos: "
 cad_reloj_en_s: .asciiz "\n   Reloj en segundos: "
 
                 ##########################################################
-                # Segmento de c骴igo
+                # Segmento de c贸digo
                 ##########################################################
 
                 .globl __start
@@ -27,13 +27,13 @@ __start:		###############################################
 				la$a0,reloj
 				jal imprime_reloj
 			 
-salir:          li $v0, 10              # C骴igo de exit (10)
-                syscall                 # 趌tima instrucci髇 ejecutada
+salir:          li $v0, 10              # C贸digo de exit (10)
+                syscall                 # 脷ltima instrucci贸n ejecutada
                 .end
 
 				########################################################## 
                 # Subrutina que devuelve el reloj desde los segundos a medianoche
-                # Entrada: $a0 direcci髇 del reloj en memoria
+                # Entrada: $a0 direcci贸n del reloj en memoria
 				# 		   $a1 segundos desde la medianoche
                 ########################################################## 
 				
@@ -52,40 +52,40 @@ inicializa_reloj_en_s:
 
                 ########################################################## 
                 # Subrutina que imprime el valor del reloj
-                # Entrada: $a0 con la direcci髇 de la variable reloj
+                # Entrada: $a0 con la direcci贸n de la variable reloj
                 ########################################################## 
 
 imprime_reloj:  move $t0, $a0
-                la $a0, cad_asteriscos  # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_asteriscos  # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
-                la $a0, cad_horas       # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_horas       # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
                 lbu $a0, 2($t0)         # Lee el campo HH
-                li $v0, 1               # C骴igo de print_int
+                li $v0, 1               # C贸digo de print_int
                 syscall
 
-                la $a0, cad_minutos     # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_minutos     # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
                 lbu $a0, 1($t0)         # Lee el campo MM
-                li $v0, 1               # C骴igo de print_int
+                li $v0, 1               # C贸digo de print_int
                 syscall
 
-                la $a0, cad_segundos    # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_segundos    # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
                 lbu $a0, 0($t0)         # Lee el campo SS
-                li $v0, 1               # C骴igo de print_int
+                li $v0, 1               # C贸digo de print_int
                 syscall
 
-                la $a0, cad_asteriscos  # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_asteriscos  # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
                 jr $ra
 
@@ -95,27 +95,27 @@ imprime_reloj:  move $t0, $a0
                 ########################################################## 
 
 imprime_s:      move $t0, $a0
-                la $a0, cad_asteriscos  # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_asteriscos  # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
 
-                la $a0, cad_reloj_en_s  # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_reloj_en_s  # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
 
                 move $a0, $t0           # Valor entero a imprimir
-                li $v0, 1               # C骴igo de print_int
+                li $v0, 1               # C贸digo de print_int
                 syscall
 
-                la $a0, cad_asteriscos  # Direcci髇 de la cadena
-                li $v0, 4               # C骴igo de print_string
+                la $a0, cad_asteriscos  # Direcci贸n de la cadena
+                li $v0, 4               # C贸digo de print_string
                 syscall
                 jr $ra
                 
                 ########################################################## 
                 # Subrutina que incrementa el reloj en una hora
-                # Entrada: $a0 con la direcci髇 del reloj
+                # Entrada: $a0 con la direcci贸n del reloj
                 # Salida: reloj incrementado en memoria
                 # Nota: 23:MM:SS -> 00:MM:SS
                 ########################################################## 
