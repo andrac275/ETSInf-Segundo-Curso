@@ -1,0 +1,17 @@
+total 100
+drwxrwxr-x 2 usuario usuario 4096 nov 25 16:10 .
+drwxrwxr-x 3 usuario usuario 4096 nov 25 15:01 ..
+-rwxrwx--- 1 usuario vboxsf  1399 nov 24 18:17 a_pipe.c
+-rwxrwxr-x 1 usuario usuario 8480 nov 25 15:05 descriptor
+-rwxrwx--- 1 usuario vboxsf   588 nov 24 18:17 descriptor.c
+-rwxrwxr-x 1 usuario usuario 8400 nov 25 15:12 descriptor_output
+-rwxrwx--- 1 usuario vboxsf   780 nov 25 15:12 descriptor_output.c
+-rwx------ 1 usuario usuario    0 nov 25 16:10 ls_eixida.txt
+-rwxrwxr-x 1 usuario usuario 8696 nov 25 16:08 ls_redir
+-rwxrwx--- 1 usuario usuario  664 nov 25 16:10 ls_redir.c
+-rwx------ 1 usuario usuario   47 nov 25 15:28 messages.txt
+-rwx------ 1 usuario usuario   23 nov 25 15:41 output.txt
+-rwxrwxr-x 1 usuario usuario 8656 nov 25 15:41 redir_output
+-rwxrwx--- 1 usuario vboxsf   622 nov 24 18:17 redir_output.c
+-rwxrwxr-x 1 usuario usuario 8560 nov 25 15:27 share_file
+-rwxrwx--- 1 usuario vboxsf   731 nov 25 15:27 share_file.c
