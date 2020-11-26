@@ -1,0 +1,95 @@
+Este TXT explica el codi de "dos_tubs.c" de la PL06 de FSO 
+Cada linia de este txt coincideix amb la explicacio de la linia del codi.
+
+
+
+
+
+
+
+
+
+Definicio del comandament ls -la que executarem
+Definicio del comandament grep ejemplo que executarem
+Definicio del comandament wc -l que executarem
+Crear variable int anomenada fildes per a la primera tuberia
+Crear variable int anomenada fildes2 per a la primera tuberia
+
+
+//Necessite un fitxer per a guardar la ultima redireccio
+Variable fd amb el descriptor de l'arxiu.
+Obrir result.txt, amb els seus permisos. si no esta creat, el crea.
+
+
+//Creacio de la primera tuberia amb la variable fildes
+
+
+
+
+
+Creacio de la segona tuberia amb la variable fildes2
+
+
+
+
+
+For que tindra 3 iteracions. 0 , 1, 2 per a executar els tres comandaments
+
+//Fill 0 que executa ls 
+
+copia la escriptura del tub 1 en la eixida estandard. Mira linia 48
+
+
+
+
+
+
+
+el ls en lloc de anar a la eixida estandar va a la tub1
+
+
+
+//Fill 1 que executa grep ejemplo
+
+Fa que la entrada estandard siga el tub1, aixi rebra el ls de abans
+Fa que la escriptura del tub 1 siga la eixida estantard. Mira linia 63
+
+
+
+
+
+
+
+el grep en lloc de anar a la eixida estandar va a la tub2
+
+
+
+//Fill 2 que executa wc -l
+
+Fa que la entrada estandard siga el tub2, aixi rebra el grep de abans
+Fa que la eixida estandard siga l'arxiu fd. Mira linia 78
+
+
+
+
+
+
+
+El wc eixira cap a l'arxiu result.txt
+
+
+
+
+
+
+
+
+Tanca el fitxer que hem obert
+
+
+Se tanquen les tuberies en les proximes linies
+
+
+
+
+Espera als 3 fills. 0 ,1 i 2
