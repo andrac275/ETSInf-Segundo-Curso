@@ -1,0 +1,83 @@
+### ESTRUCTURA DE COMPUTADORES (ETS Eng. Inf.)
+##  
+## marzo de 2014
+##
+## PRÁCTICA 13: SINCRONIZACIÓN POR INTERRUPCIONES
+##
+## Código inicial del manejador
+
+
+##############################################################
+##              ÁREA DE DATOS DEL MANEJADOR                 ##
+##############################################################
+
+			.kdata
+context: .space 16	#Andreu: Variable per preservar el context
+					# 16 d'espai per preservar 4 registres
+#############################################################
+##                  CÓDIGO DEL MANEJADOR                   ##
+#############################################################
+
+          .ktext 0x80000080
+
+    ## Preserva el contexto del programa de usuario
+    sw $t0, 0 ($k1)
+	sw $a0, 4 ($k1)
+	sw $v0, 8 ($k1)
+	
+	.set noat
+	sw $at, 12 ($k1)
+	.set at
+
+    ## Identifica y trata excepciones
+    ## Pas 3
+	li $v0, 11
+    li $a0, '*'
+    syscall	#Imprimeix en consola el que hi ha en $a0
+
+	#Esta linea cancela el teclat. Per cancelar cal
+	#fer un load segons el apendice amb desp 4 (llegir DATOS)
+	li $t0, 0xffff0000
+    lb $a0, 4($t0)
+
+    ## Restaura el contexto
+    lw $t0, 0 ($k1)
+	lw $a0, 4 ($k1)
+	lw $v0, 8 ($k1)
+	
+	.set noat
+	lw $at, 12 ($k1)
+	.set at
+	
+    ## Restaura el modo usuario y vuelve al programa
+    mfc0 $k0, $14	#Andreu<- Esta linea es para volver
+	rfe
+	jr $k0 
+
+#############################################################
+##                    CÓDIGO DE INICIO                     ##
+#############################################################
+
+          .text
+          .globl __start 
+__start: 
+    ## Código de inicio
+	la $t0, 0xFFFF0000
+    li $t1,2	
+	sb $t1, 0 ($t0) #Andreu Pas1. Posa un 1 en la posicio E del teclat
+				#Mentre E = 1, si R=1, activa les interrupcionsdel teclat
+	
+		#Andreu: Desemascarar interrupcio 0.
+	li $t1,0x101
+	mtc0 $t1, $12	#Moure al registre 12 que es el status.
+
+	
+	la $k1,context
+
+    ## Salto al programa de usuario
+	jal main
+
+    ## Código de terminación. El shutdown.
+	li $v0, 10
+	syscall	 # Función exit
+

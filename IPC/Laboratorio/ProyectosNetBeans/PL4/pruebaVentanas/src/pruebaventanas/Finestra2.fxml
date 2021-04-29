@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pruebaventanas.Finestra2Controller">
+   <children>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Finestra 2" />
+      <Button mnemonicParsing="false" onAction="#siguienteAction" text="siguiente" />
+      <Button fx:id="anterior" mnemonicParsing="false" onAction="#anteriorAction" text="anterior" />
+   </children>
+</VBox>

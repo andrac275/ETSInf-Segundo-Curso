@@ -1,0 +1,131 @@
+### ESTRUCTURA DE COMPUTADORES (ETS Eng. Inf.)
+##  
+## marzo de 2014
+##
+## PRÁCTICA 13: SINCRONIZACIÓN POR INTERRUPCIONES
+##
+## Código inicial del manejador
+
+
+##############################################################
+##              ÁREA DE DATOS DEL MANEJADOR                 ##
+##############################################################
+
+			.kdata
+var1:	    .word 0xFFFFFFFF	
+		
+context: .space 16	#Andreu: Variable per preservar el context
+					# 16 d'espai per preservar 4 registres
+#############################################################
+##                  CÓDIGO DEL MANEJADOR                   ##
+#############################################################
+
+          .ktext 0x80000080
+
+		## Preserva el contexto del programa de usuario
+		sw $t0, 0 ($k1)
+		sw $a0, 4 ($k1)
+		sw $v0, 8 ($k1)
+		
+		.set noat
+		sw $at, 12 ($k1)
+		.set at
+
+		## Identifica y trata excepciones
+	
+		j tractar_interrupt
+	
+		## Restaura el contexto
+retexec:    
+		lw $t0, 0 ($k1)
+		lw $a0, 4 ($k1)
+		lw $v0, 8 ($k1)
+	
+		.set noat
+		lw $at, 12 ($k1)
+		.set at
+	
+		## Restaura el modo usuario y vuelve al programa
+		mfc0 $k0, $14	#Andreu<- Esta linea es para volver
+		rfe
+		jr $k0 
+
+#############################################################
+##                    TRACTAR INTERRUPT                    ##
+#############################################################
+#puedo usar $at, $t0, $v0 y $a0 como auxiliares porque despues los restaurare
+#en el retexec.
+tractar_interrupt:
+		mfc0 $t0, $13		#llegir registre de causa del procesador
+		
+        # Comprovar si es una interrupcio
+        move $v0, $t0		#Copie la causa inicial (eque esta en $t0) a $v0
+        
+        andi $v0, $v0, 0x003C	#Aplicar mascara per aillar
+        bnez $v0, retexec     	# Per ser interrupcio, te que ser 0 la causa de, l'excepcio
+				#si no es 0, es que no era interrupcio i acabem botant a retexec
+		
+		#Arribat aci en el codi, si que era interrupcio, per tant veure quina...
+		
+		# Check interrupt line
+        andi $t0, $t0, 0x1400	#Aillar IP0 i IP2 del registre de causa
+			#Ara tinc en $t0 que hi ha en IP0 i IP2, els valors.
+			
+        andi $a0, $t0, 0x400	#Comprovar valor de IP0 desde $t0
+        bnez $a0, int0          # Si IP0 = 1 botare a la interrupcio del teclat.
+        andi $a0, $t0, 0x1000	#Comprovar valor de IP2 desde $t0
+        bnez $a0, int2     		# Si IP2 = 1 botare a la interrupcio del rellotge.
+        j retexec
+
+int0:   # Tractar TECLAT IP0
+        li $v0, 11
+        li $a0, '*'
+        syscall	#Imprimeix en consola el que hi ha en $a0. L'asterisc
+
+			#Estes 2 linies seguents cancela el teclat. Per cancelar cal fer un load 
+			#segons el apendice amb desp 4 (llegir DATOS)
+        li $t0, 0xffff0000
+        lw $a0, 4($t0)
+        j retexec
+
+int2:   # Tractar RELLOTGE IP2
+        la $t0, 0xffff0010
+        li $a0, 0x1
+        sb $a0, 0($t0)
+        j retexec
+
+
+#############################################################
+##                    CÓDIGO DE INICIO                     ##
+#############################################################
+
+          .text
+          .globl __start 
+__start: 
+    ## Código de inicio
+	#Habilitat interrupcions del TECLAT
+	la $t0, 0xFFFF0000
+    li $t1,2	
+	sb $t1, 0 ($t0) #Posa un 1 en la posicio E del teclat
+				#Mentre E = 1, si R=1, activa les interrupcionsdel teclat
+	
+	#Habilitat interrupcions del RELLOTGE
+	la $t0, 0xFFFF0010
+    li $t1,1	
+	sb $t1, 0 ($t0) #Posa un 1 en la posicio E del rellotge
+				#Mentre E = 1, si R=1, activa les interrupcionsdel rellotge
+	
+	#Desenmascarar interrupcions	
+	li $t1,0x501	#Andreu: Desemascarar interrupcio 0 i 1 junt al enable.
+	mtc0 $t1, $12	#Moure al registre 12 que es el status.
+	
+
+	la $k1,context
+
+    ## Salto al programa de usuario
+	jal main
+
+    ## Código de terminación. El shutdown.
+	li $v0, 10
+	syscall	 # Función exit
+
