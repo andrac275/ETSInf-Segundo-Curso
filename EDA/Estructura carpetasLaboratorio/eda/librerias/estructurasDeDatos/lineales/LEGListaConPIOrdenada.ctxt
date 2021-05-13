@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=LEGListaConPIOrdenada
-comment0.text=\r\n\ Practica1\r\n\ \r\n\ @author\ Andreu\ Mut\ Portes\r\n\ @version\ 2021\r\n
-comment1.params=
-comment1.target=LEGListaConPIOrdenada()
-comment1.text=\r\n\ Constructor\ objetos\ LEGListaConPIOrdenada\r\n
-comment2.params=e
-comment2.target=void\ insertar(java.lang.Comparable)
-numComments=3
