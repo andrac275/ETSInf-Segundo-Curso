@@ -1,0 +1,195 @@
+<Object><Name>disco 1</Name><ID>0</ID><ReferenceNumber></ReferenceNumber><GroupIdentifier></GroupIdentifier><PersistentIdentifier></PersistentIdentifier><MasterCreationDate locale="CEST"><Date format="yyyyMMdd">20210514</Date><Time format="HHmmssSSS">100801990</Time></MasterCreationDate><ObjectComposition>complex</ObjectComposition><StructuralType><Name></Name><Extension></Extension></StructuralType><HardwareEnvironment>amd64</HardwareEnvironment><SoftwareEnvironment>OS: Windows 10 10.0, JVM:Oracle Corporation 1.8.0_281</SoftwareEnvironment><InstallationRequirements></InstallationRequirements><AccessInhibitors></AccessInhibitors><AccessFacilitators></AccessFacilitators><Quirks></Quirks><MetadataRecordCreator>admin</MetadataRecordCreator><MetadataCreationDate locale="CEST"><Date format="yyyyMMdd">20210514</Date><Time format="HHmmssSSS">100801991</Time></MetadataCreationDate><Comments></Comments><Files><Folder><Path>disco 1</Path><Folder><Path>disco 1</Path><File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-0</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\Balance Shooting Star 2013 Xls.xlsx</Path>
+<Filename>
+<Name>Balance Shooting Star 2013 Xls.xlsx</Name>
+<Extension>xlsx</Extension>
+</Filename>
+<Size>18016</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141007</Date>
+<Time format="HHmmssSSS">233730000</Time>
+</FileDateTime>
+<Mimetype>application/open-office-1.x</Mimetype>
+<FileFormat>
+<Format>Open Office, </Format>
+<Version/>
+</FileFormat>
+<Text>
+<CharacterSet>ISO-8859-1</CharacterSet>
+<MarkupLanguage/>
+</Text>
+</File>
+<File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-1</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\Caractersticas Plata Coloidal FOLLETO 8.doc</Path>
+<Filename>
+<Name>Caractersticas Plata Coloidal FOLLETO 8.doc</Name>
+<Extension>doc</Extension>
+</Filename>
+<Size>33792</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141007</Date>
+<Time format="HHmmssSSS">233436000</Time>
+</FileDateTime>
+<Mimetype>application/ms-word</Mimetype>
+<FileFormat>
+<Format>Microsoft Word</Format>
+<Version>Microsoft Office Word</Version>
+</FileFormat>
+<Text>
+<CharacterSet>UTF-8</CharacterSet>
+<MarkupLanguage>English</MarkupLanguage>
+</Text>
+<Summary>
+<Title>Caractersticas</Title>
+<Author>Pedro 1</Author>
+<Template>Normal.dotm</Template>
+<Subject/>
+</Summary>
+<Properties>
+<Characters>5190</Characters>
+<CharactersWithSpaces>6121</CharactersWithSpaces>
+<DateCreated>2010-09-20 06:37:00</DateCreated>
+<DateModified>2011-01-06 02:54:00</DateModified>
+<RevisionCount>4</RevisionCount>
+<EditTime>3</EditTime>
+<Pages>2</Pages>
+<Words>943</Words>
+<Lines>43</Lines>
+<Paragraphs>12</Paragraphs>
+<Security>0</Security>
+<Company>Biotica Construcciones</Company>
+<LinksUpToDate>false</LinksUpToDate>
+<TitleOfParts>Caractersticas</TitleOfParts>
+<HeadingPairs>Ttulo, 1</HeadingPairs>
+<Hyperlinks>false</Hyperlinks>
+<IsTemplate>false</IsTemplate>
+<IsComplex>false</IsComplex>
+<IsEncrypted>false</IsEncrypted>
+<HasPictures>false</HasPictures>
+<IsGlossary>false</IsGlossary>
+<LID>409</LID>
+<DOPOffset>8240</DOPOffset>
+</Properties>
+</File>
+<File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-2</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\Contabilidad General Para Hosteleria.doc</Path>
+<Filename>
+<Name>Contabilidad General Para Hosteleria.doc</Name>
+<Extension>doc</Extension>
+</Filename>
+<Size>20992</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141014</Date>
+<Time format="HHmmssSSS">011900000</Time>
+</FileDateTime>
+<Mimetype>application/ms-word</Mimetype>
+<FileFormat>
+<Format>Microsoft Word</Format>
+<Version>Microsoft Office Word</Version>
+</FileFormat>
+<Text>
+<CharacterSet>UTF-8</CharacterSet>
+<MarkupLanguage>English</MarkupLanguage>
+</Text>
+<Summary>
+<Title>CONTABILIDAD GENERAL PARA HOSTELERIA</Title>
+<Author>OVERON</Author>
+<Template>Normal</Template>
+<Subject/>
+</Summary>
+<Properties>
+<Characters>1055</Characters>
+<CharactersWithSpaces>1244</CharactersWithSpaces>
+<DateCreated>2006-05-03 23:31:00</DateCreated>
+<DateModified>2006-07-05 01:27:00</DateModified>
+<RevisionCount>3</RevisionCount>
+<EditTime>25</EditTime>
+<Pages>1</Pages>
+<Words>191</Words>
+<Lines>8</Lines>
+<Paragraphs>2</Paragraphs>
+<Security>0</Security>
+<Company>Dark</Company>
+<LinksUpToDate>false</LinksUpToDate>
+<TitleOfParts>CONTABILIDAD GENERAL PARA HOSTELERIA</TitleOfParts>
+<HeadingPairs>Ttulo, 1</HeadingPairs>
+<Hyperlinks>false</Hyperlinks>
+<IsTemplate>false</IsTemplate>
+<IsComplex>false</IsComplex>
+<IsEncrypted>false</IsEncrypted>
+<HasPictures>false</HasPictures>
+<IsGlossary>false</IsGlossary>
+<LID>409</LID>
+<DOPOffset>2882</DOPOffset>
+</Properties>
+</File>
+<File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-3</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\documentos_Folleto_Thermochip_Deco_64d3079e.pdf</Path>
+<Filename>
+<Name>documentos_Folleto_Thermochip_Deco_64d3079e.pdf</Name>
+<Extension>pdf</Extension>
+</Filename>
+<Size>441114</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141007</Date>
+<Time format="HHmmssSSS">234302000</Time>
+</FileDateTime>
+<Mimetype>application/pdf</Mimetype>
+<FileFormat>
+<Format>Abobe PDF</Format>
+<Version>1.6</Version>
+</FileFormat>
+<Text>
+<CharacterSet>ISO-8859-1</CharacterSet>
+<MarkupLanguage>unknown</MarkupLanguage>
+</Text>
+</File>
+<File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-4</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\Excel Conciliacion Bancaria Finanzas Contabilidad Tesoreria.xls</Path>
+<Filename>
+<Name>Excel Conciliacion Bancaria Finanzas Contabilidad Tesoreria.xls</Name>
+<Extension>xls</Extension>
+</Filename>
+<Size>483328</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141007</Date>
+<Time format="HHmmssSSS">234536000</Time>
+</FileDateTime>
+<Mimetype>application/vnd.ms-excel</Mimetype>
+<FileFormat>
+<Format>Microsoft Excel</Format>
+<Version>4.1+</Version>
+</FileFormat>
+<Text>
+<CharacterSet>UTF-8</CharacterSet>
+<MarkupLanguage>unknown</MarkupLanguage>
+</Text>
+</File>
+<File xmlns:nz_govt_natlib_xsl_XSLTFunctions="nz.govt.natlib.xsl.XSLTFunctions">
+<FileIdentifier>0-5</FileIdentifier>
+<Path>E:\Google Drive\Universidad Drive\2o Curso\2o Semestre\DYP\Practicas\Practica3_Sesiones 7 i 8\pr 07 08 ofim\disco 1\Plantilla Excel Presupuesto Para La Casa Muy Bueno Xls1.xls</Path>
+<Filename>
+<Name>Plantilla Excel Presupuesto Para La Casa Muy Bueno Xls1.xls</Name>
+<Extension>xls</Extension>
+</Filename>
+<Size>53760</Size>
+<FileDateTime>
+<Date format="yyyyMMdd">20141014</Date>
+<Time format="HHmmssSSS">013444000</Time>
+</FileDateTime>
+<Mimetype>application/vnd.ms-excel</Mimetype>
+<FileFormat>
+<Format>Microsoft Excel</Format>
+<Version>4.1+</Version>
+</FileFormat>
+<Text>
+<CharacterSet>UTF-8</CharacterSet>
+<MarkupLanguage>unknown</MarkupLanguage>
+</Text>
+</File>
+</Folder></Folder></Files></Object>
