@@ -46,10 +46,13 @@ public class VistaListaControlador implements Initializable {
         misdatos.add(new Persona("María", "Pérez"));
         //----------------------------------------------------------------
         //  crear la listaobservable datos a partir del arraylist misdatos
+        
+        //ANDREU: private ObservableList<Persona> datos = null;
         datos= FXCollections.observableList(misdatos);
         
         //----------------------------------------------------------------
-        //asociar la listaobservable datos al listview listaLV           
+        //asociar la listaobservable datos al listview listaLV  
+        //ANDREU:  private ListView<Persona> listaLV;
         listaLV.setItems(datos);
         //----------------------------------------------------------------
         // asignar aqui el nuevo estilo de la celda*/

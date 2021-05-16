@@ -1,0 +1,42 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 25-mar-2020, 15:02:21
+    Author     : DSIC_jsoler
+*/
+
+.my-grid-cell{
+    -fx-background-color: red, white ;
+    -fx-background-insets: 0, 0 1 1 0 ;
+}
+.my-grid-cell:pressed{
+    -fx-background-color: red, red ;
+}
+.my-grid-cell.first-row {
+    -fx-background-insets: 0, 1 1 1 0 ;
+}
+.my-grid-cell.first-column {
+    -fx-background-insets: 0, 0 1 1 1 ;
+}
+.my-grid-cell.first-row.first-column {
+    -fx-background-insets: 0, 1 ;
+}
+.my-oruga{
+    -fx-fill: lightgreen;
+}
+.my-button{
+    -fx-background-image: url('Pause-Button-Transparent.png');
+    -fx-background-size: 45px 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center; 
+}
+.my-button:selected{
+    -fx-graphic: url('Play-Button-Transparent.png');
+    -fx-background-size: 45px 45px;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+}
+

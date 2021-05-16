@@ -30,9 +30,11 @@ public class Controller implements Initializable {
     private PieChart pie;
     @FXML
     private BarChart<String, Number> bar;
-    private Model modelLocal;
     @FXML
     private HBox cajaBotones;
+    
+    //Atributs
+    private Model modelLocal;
 
     /**
      * Initializes the controller class.
@@ -44,9 +46,9 @@ public class Controller implements Initializable {
             ((Button)node).defaultButtonProperty().bind(((Button)node).focusedProperty());
         }
         
-        bar.setTitle("Notas");
+        bar.setTitle("NotasBar");
         pie.setTitleSide(Side.LEFT);
-        pie.setTitle("Notas");
+        pie.setTitle("NotasPie");
                
     }    
 
