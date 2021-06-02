@@ -1,0 +1,4 @@
+Esta practica tenia muchos ficheros pesados, librerias y archivos de configuracion.
+
+Communication.java es el unico fichero en el que hice cambios para realizar la practica.
+	Dejando a parte los puertos de Artemis y otros ficheros de configuracion que tengo en la carpeta W.
