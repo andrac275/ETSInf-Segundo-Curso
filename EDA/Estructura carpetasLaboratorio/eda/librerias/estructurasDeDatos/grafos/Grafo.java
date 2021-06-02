@@ -6,10 +6,10 @@ import librerias.estructurasDeDatos.lineales.LEGListaConPI;
 import librerias.estructurasDeDatos.lineales.ArrayCola;
 
 // EN LA SEGUNDA SESION: incluir los siguientes import: 
-/*import librerias.estructurasDeDatos.modelos.UFSet;
+import librerias.estructurasDeDatos.modelos.UFSet;
 import librerias.estructurasDeDatos.jerarquicos.ForestUFSet;
 import librerias.estructurasDeDatos.modelos.ColaPrioridad;
-import librerias.estructurasDeDatos.jerarquicos.MonticuloBinarioR0;*/
+import librerias.estructurasDeDatos.jerarquicos.MonticuloBinarioR0;
 
 /** Clase abstracta Grafo: Base de la jerarquia Grafo, que define el 
  *  comportamiento de un grafo.<br> 
@@ -118,7 +118,7 @@ public abstract class Grafo {
     public int[] toArrayBFS() {
         int[] res = new int[numVertices()];
         visitados = new int[numVertices()]; 
-        ordenVisita = 0;  
+        ordenVisita = 0;          
         q = new ArrayCola<Integer>();
         for (int  i = 0; i < numVertices(); i++) {
             if (visitados[i] == 0) { toArrayBFS(i, res); }
@@ -214,7 +214,46 @@ public abstract class Grafo {
       *                   si el grafo no es Conexo
      */ 
     public Arista[] kruskal() {       
-        /*COMPLETAR EN LA SEGUNDA SESION*/
-        return null;
-    }
+        /*COMPLETAR EN LA SEGUNDA SESION*/        
+        //Array resultat
+        Arista[] res = new Arista[numVertices() - 1];
+        //Monticle 
+        ColaPrioridad<Arista> aristasFactibles = new MonticuloBinarioR0<Arista>();
+        //EFSet
+        UFSet cc = new ForestUFSet(numVertices());
+        
+        //Plenar la llista d'arestes factibles
+        for(int i = 0; i < numVertices(); i++){
+            //Treure nodes adjacents a i
+            ListaConPI<Adyacente> adjacents = adyacentesDe(i);
+            
+            for(adjacents.inicio();!adjacents.esFin();adjacents.siguiente()){ //Per cada adjacent
+                //Crear aresta                
+                Arista arista = new Arista(i, adjacents.recuperar().getDestino(), adjacents.recuperar().getPeso());
+                //Inserir aresta a la cua de prioritat
+                aristasFactibles.insertar(arista);
+            }
+        }
+        
+        int numAristas = 0;
+        //Bucle while del algorisme de kruskal
+        while(numAristas <= numVertices() -1 && !aristasFactibles.esVacia()){
+            //Extraure aresta amb mínim pes
+            Arista arestaMenysPes = aristasFactibles.eliminarMin();
+            //Comprovar si l'aresta forma un cicle
+            int ccOrigen = cc.find(arestaMenysPes.getOrigen()); 
+            int ccDestino = cc.find(arestaMenysPes.getDestino());
+            if(ccOrigen != ccDestino){
+                cc.union(ccOrigen,ccDestino);
+                res[numAristas++]=arestaMenysPes;
+            }
+        }
+        
+        if(numAristas == numVertices() - 1){ 
+            return res;
+        } else {
+            return null;
+        }
+        
+    }   
 }
